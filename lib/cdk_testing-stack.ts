@@ -9,6 +9,7 @@ export class CdkTestingStack extends Stack {
     super(scope, id, props);
 
     const queue = new sqs.Queue(this, 'CdkTestingQueue', {
+      queueName: 'jf-test-queue',
       visibilityTimeout: Duration.seconds(300)
     });
 
